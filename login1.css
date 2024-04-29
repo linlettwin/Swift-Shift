@@ -1,0 +1,415 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    background-color: #E7EEF4;
+    font-family: "Poppins", sans-serif;
+    --color1: white ;
+    --color2:  #688dc4;
+}
+/*general nav*/
+.nav-bar {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    background-color: #7895CB;
+    padding: 12px 20px;
+    z-index:2px;
+}
+
+/* Styles for the logo */
+.logo img {
+    width: 40px;
+}
+.nav-bar img{
+    width:100px;
+    height:60px;
+    margin-left:40px;
+    
+}
+
+/* Styles for the main menu */
+.menu {
+    display: flex;
+    margin-right:0px;
+    position: relative; 
+    margin-left:85px;
+}
+
+.menu li {
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right:40px;
+}
+
+.menu li a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color1);
+    text-align: center;
+    /*transition: 0.15s ease-in-out;*/
+    position: relative;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Styles for the submenu */
+.submenu {
+    left: 0;
+    right:0;
+    z-index:5;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    visibility: hidden;
+    z-index:5;
+    list-style: none; 
+    padding:0; 
+    background-color: #D8E5F2; 
+    
+    
+    /*transition: 0.15s ease-in-out;*/
+    max-height: 150px; /* Set a maximum height for the submenu */
+    /*overflow-y: auto;*/
+    scrollbar-width: thin; 
+    scrollbar-color: var(--color2) var(--color1);
+
+    }
+
+    .submenu::-webkit-scrollbar {
+        width: 10px; /* Width of the scrollbar */
+    }
+    
+    .submenu::-webkit-scrollbar-thumb {
+        background-color:white; /* Color of the scrollbar thumb */
+    }
+
+.submenu li {
+    float: none;
+    width: 100%;
+    list-style: none;
+    padding-top: 6px;
+    background-color:#7895CB;
+    
+}
+.menu li:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+    width:80px;
+    background-color:#7895CB ;
+    color:white;
+    text-align:center;
+
+}
+.menu li:hover a{
+    color:white;
+    
+}
+.submenu li:hover {
+    background-color: #7895CB; 
+    border:2px solid white;
+}
+.submenu li:hover .submenu li a{
+    color:black;
+}
+
+.menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color:white; /* underline effect*/
+    transition: 0.15s ease-in-out;
+}
+.drop_list{
+    text-align:center;
+    padding:0px;
+}
+
+.menu li:hover a::after {
+    width: 100%;
+}
+.submenu li a::after {
+    content: none; 
+}
+
+/* Styles for the menu toggle icons */
+.open-menu, .close-menu {
+    background-color:#7895CB;
+    position: absolute;
+    color: var(--color1);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+
+.open-menu {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.close-menu {
+    top: 20px;
+    right: 20px;
+}
+
+/* Hide the checkbox input */
+#check {
+    display: none;
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 800px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--color2);
+        transition: all 0.2s ease-in-out;
+    }
+
+    .menu li {
+        margin-top: 40px;
+    }
+
+    .menu li a {
+        padding: 10px;
+        font-size: 15px;
+        text-align:center;
+    }
+
+    /* Display the menu toggle icons */
+    .open-menu, .close-menu {
+        display: block;
+    }
+
+    /* Show the menu when the checkbox is checked */
+    #check:checked ~ .menu {
+        right: 0;
+    }
+    .submenu {
+        width:auto;
+        background-color:#E7EEF4;
+        overflow-y: auto;
+        max-height: 150px;
+        overflow-x:hidden;
+        scrollbar-width: thin; 
+        scrollbar-color: var(--color2) var(--color1);
+        }
+        .submenu::-webkit-scrollbar {
+            width: 6px; /* Width of the scrollbar */
+            
+        }
+        
+        .submenu::-webkit-scrollbar-thumb {
+            background-color: var(--color1); /* Color of the scrollbar thumb */
+        }
+    
+    .submenu li {
+        float: none;
+        width: 150px;
+        list-style: none;
+        padding-top: 6px;
+        background-color:#7895CB ;
+        color:black;
+        
+    }
+    .menu li:hover .submenu {
+        opacity: 1;
+        visibility: visible;
+        top: 100%;
+        width:150px;
+        height:auto;
+        background-color:#7895CB ;
+    
+    }
+    .menu li:hover .submenu a{
+        color:white;
+        
+    }
+    menu li a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: var(--color1);
+        transition: 0.15s ease-in-out;
+    }
+
+    .menu li:hover a::after {
+        width: 100%;
+    }
+    .submenu li a::after {
+        content: none; 
+    }
+}
+
+/*login part */
+.body{
+    min-height: 100vh;
+    background-color: #E7EEF4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 50vh;
+    height: 75vh;
+    border-radius: 3vh;
+    background-color: #D8E5F2;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2), -10px -10px 20px rgba(255,255,250,0.8);
+}
+.top{
+    text-align: center;
+    margin-bottom: 10vh;
+}
+.image{
+    width: 10vh;
+    height: 10vh;
+    position: relative;
+    left: 20vh;
+    top: 3vh;
+}
+.image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.top span{
+    position: relative;
+    top: 2vh;
+    font-weight: bold;
+    font-size: 3vh;
+    letter-spacing: 0.2vh;
+}
+
+.inputBox{
+    border-radius: 2vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 4.5vh;
+    width: 40vh;
+    height: 6vh;
+    margin-bottom: 4vh;
+    background-color:white;
+    /*box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255,255,250,0.6); */
+}
+
+/*.inputBox:focus-within{
+    
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1),-5px -5px 10px rgba(255,255,250,0.5),
+    5px 5px 10px rgba(0, 0, 0, 0.1),-5px -5px 10px rgba(255,255,250,0.5);
+    outline: 0.42vh solid rgba(255,255,250,0.39); 
+}  */
+label{
+    background-color:white;
+}
+.input{
+    height: 4vh;
+    width: 30vh;
+    margin-left: -2vh;
+    border: none;
+    outline: none;
+    background-color: white;
+}
+.forget{
+    
+    margin-top:-2vh;
+    background-color:#D8E5F2;
+    
+}
+#forget_bt{
+    border:none;
+    color:#F18D65;
+    font-weight:bold;
+    font-size:2vh;
+    background-color:#D8E5F2;
+
+}
+.submit{
+    margin-top: 2vh;
+    height: 6vh;
+    width: 20vh;
+    border: none;
+    background-color:#7895CB;
+    border-radius: 2vh;
+    cursor: pointer;
+    /*box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3),-4px -4px 5px rgba(255,255,250,0.7);*/
+    font-weight: bold;
+}
+.submit:hover{
+    /*outline: 0.5vh groove rgba(255,255,250,0.5);*/
+    border-color:#7895CB;
+    border: 3px solid;
+    background-color:white;
+    color:#7895CB;
+}
+form{
+    text-align: center;
+
+}
+.user{
+    margin-top: 3vh;
+}
+.user span{
+    margin-left: 1vh;
+    font-size: 3vh;
+    font-weight: bold;
+    color: #1F2B81;
+    cursor: pointer;
+}
+
+.inputBoxBack{
+    height: 5vh;
+    margin-bottom: 2vh;
+    margin-top: 1vh;
+
+}
+.imageBack{
+    width: 8vh;
+    height: 8vh;
+    left: 21.3vh;
+}
+.topBack{
+    margin-bottom: 4vh;
+}
+.submitBack{
+    margin-top: 2vh;
+    height: 6vh;
+    width: 20vh;
+    font-size: 1.8vh;
+}
+.containerFront{
+    position: absolute;
+    z-index: 2;
+    transition: 2s ease-in-out;
+}
+.containerBack{
+    position: absolute;
+    z-index: 1;
+    transform: rotateY(180deg);
+    transition: 2s ease-in-out;
+}
+

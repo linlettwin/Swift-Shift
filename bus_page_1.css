@@ -1,0 +1,583 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+}
+body,html {
+  background-color:#E7EEF4;
+  font-family: "Poppins", sans-serif;
+  --color1: #FFF ;
+  --color2:  #688dc4;
+ 
+}
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+/*general nav*/
+.nav-bar {
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  position: relative;
+  background-color: #7895CB;
+  padding: 12px 20px;
+  z-index:2px;
+  
+}
+
+/* Styles for the logo */
+.logo img {
+  width: 40px;
+}
+.nav-bar img{
+  width:100px;
+  height:60px;
+  margin-left:40px;
+  
+}
+
+/* Styles for the main menu */
+.menu {
+  display: flex;
+  margin-right: 0px;
+  position: relative; 
+  margin-left:85px;
+}
+
+.menu li {
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right:40px;
+}
+
+.menu li a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color1);
+  text-align: center;
+  /*transition: 0.15s ease-in-out;*/
+  position: relative;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Styles for the submenu */
+.submenu {
+  left: 0;
+  right:0;
+  z-index:5;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  visibility: hidden;
+  z-index:5;
+  list-style: none; 
+  padding:0; 
+  background-color: #D8E5F2; 
+  
+  /*transition: 0.15s ease-in-out;*/
+  max-height: 150px; /* Set a maximum height for the submenu */
+  /*overflow-y: auto;*/
+  scrollbar-width: thin; 
+  scrollbar-color: var(--color2) var(--color1);
+
+  }
+
+  .submenu::-webkit-scrollbar {
+      width: 10px; /* Width of the scrollbar */
+  }
+  
+  .submenu::-webkit-scrollbar-thumb {
+      background-color:white; /* Color of the scrollbar thumb */
+  }
+
+.submenu li {
+  float: none;
+  width: 100%;
+  list-style: none;
+  padding-top: 6px;
+  background-color:#7895CB;
+  
+}
+.menu li:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  top: 100%;
+  width:100px;
+  background-color:#7895CB ;
+  color:white;
+  text-align:center;
+
+}
+.menu li:hover a{
+  color:white;
+  
+}
+.submenu li:hover {
+  background-color: #7895CB; 
+  border:2px solid white;
+}
+.submenu li:hover .submenu li a{
+  color:black;
+}
+
+.menu li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color:white; /* underline effect*/
+  transition: 0.15s ease-in-out;
+}
+.drop_list{
+  text-align:center;
+  padding:0px;
+}
+
+.menu li:hover a::after {
+  width: 100%;
+}
+.submenu li a::after {
+  content: none; 
+}
+
+/* Styles for the menu toggle icons */
+.open-menu, .close-menu {
+  background-color:#7895CB;
+  position: absolute;
+  color: var(--color1);
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: none;
+}
+
+.open-menu {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.close-menu {
+  top: 20px;
+  right: 20px;
+}
+
+/* Hide the checkbox input */
+#check {
+  display: none;
+}
+#login_user{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  align-items:center;
+  margin-right:0px;
+  margin-left:0px;
+}
+#login_user:hover{
+  text-decoration: none;
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 800px) {
+  .menu {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 80%;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      z-index: 100;
+      background-color: var(--color2);
+      transition: all 0.2s ease-in-out;
+  }
+
+  .menu li {
+      margin-top: 40px;
+  }
+
+  .menu li a {
+      padding: 10px;
+      font-size: 15px;
+      text-align:center;
+  }
+
+  /* Display the menu toggle icons */
+  .open-menu, .close-menu {
+      display: block;
+  }
+
+  /* Show the menu when the checkbox is checked */
+  #check:checked ~ .menu {
+      right: 0;
+  }
+  .submenu {
+      width:auto;
+      background-color:#E7EEF4;
+      overflow-y: auto;
+      max-height: 150px;
+      overflow-x:hidden;
+      scrollbar-width: thin; 
+      scrollbar-color: var(--color2) var(--color1);
+      }
+      .submenu::-webkit-scrollbar {
+          width: 6px; /* Width of the scrollbar */
+          
+      }
+      
+      .submenu::-webkit-scrollbar-thumb {
+          background-color: var(--color1); /* Color of the scrollbar thumb */
+      }
+  
+  .submenu li {
+      float: none;
+      width: 150px;
+      list-style: none;
+      padding-top: 6px;
+      background-color:#7895CB ;
+      color:black;
+      
+  }
+  .menu li:hover .submenu {
+      opacity: 1;
+      visibility: visible;
+      top: 100%;
+      width:150px;
+      height:auto;
+      background-color:#7895CB ;
+  
+  }
+  .menu li:hover .submenu a{
+      color:white;
+      
+  }
+  menu li a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--color1);
+      transition: 0.15s ease-in-out;
+  }
+
+  .menu li:hover a::after {
+      width: 100%;
+  }
+  .submenu li a::after {
+      content: none; 
+  }
+}
+
+/*body*/
+
+.travel {
+  margin: 0;
+  padding: 0;
+  background-image: url(images/bus/bus_background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 75vh;
+  color: #fff;
+  margin-top: -50px;
+  padding-top: -30px;
+}
+.form_container{
+  padding-top:100px;
+  display:flex;
+  flex-direction:row;
+  justify-content: center;  
+  margin-left:60px;
+  margin-right:60px;
+}
+.title_ticket{
+  width:120px;
+  padding:15px;
+  background-color:#4c4d4b;
+  color:white;
+  text-align: center;
+  font-size:25px;
+}
+.title_ticket h6{
+  font-family:"Poppins";
+  text-align: center;
+  margin-top: 55px;
+}
+
+.glass-container {
+  background-color: rgba(53, 52, 52, 0.8);
+  padding: 20px;
+  border-radius: 0px;
+  text-align: center;
+  width: 80%;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.src_btn{
+  background-color:#7895CB;
+  color:black;
+  font-weight:bold;
+  width:90px;
+  display:flex;
+  text-align:center;
+  justify-content: center;
+}
+#sub_btn{
+  background-color:#7895CB;
+  width:90px;
+  border:none;
+  font-size:30px;
+  color:white;
+}
+.glass-container p {
+  font-size: 12px;
+}
+
+.glass-container h4 {
+  font-weight: bold;
+ 
+  margin-bottom: 5px;
+  text-align: left;
+  margin-left: 0px;
+}
+.way {
+  display:flex;
+  margin-left:0px;
+}
+.way input{
+width:20px;
+}
+
+.label {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 10px; /* Adjust as needed */
+
+}
+
+/* Styles for portions within the glass container */
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.portion {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  display: inline;
+}
+.portion i{
+  padding: auto;
+  margin-right: 5px;
+}
+.portion p{
+  font-family:"Poppins";
+}
+h4 {
+  font-weight: bold;
+}
+
+input {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+#adate{
+  display:none;
+}
+
+
+.passenger_div{
+display:none;
+position:absolute;
+z-index:2;
+background-color:white;
+width:300px;
+height:230px;
+margin-top:-110px;
+margin-left:580px;
+}
+
+.passenger_total{
+padding-top:20px;
+padding-left:20px;
+padding-right:20px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+.pass_pt{
+display:flex;
+flex-direction:row;
+justify-content:space-between;
+}
+.lab{
+ color:black;
+ font-size:20px;
+ margin-top:30px;
+}
+.slt{
+width:90px;
+height:30px;
+margin-top:30px;
+
+}
+.pass-btn{
+width:100px;
+height:35px;
+margin-top: 30px;
+margin-left:80px;
+text-align:center;
+padding:5px;
+}
+
+
+@media (max-width: 800px){
+    .travel{
+      height:100vh;
+    }
+    .passenger_div{
+       margin-left:-15px;
+       padding:20px;
+    }
+}
+
+@media (max-width: 600px){
+  .travel{
+    height:150vh;
+  }
+  .passenger_div{
+    margin-top:70px;
+    padding:20px;
+ }
+}
+
+
+.whole_lower{
+  background-color: #E7EEF4;
+  height:auto;
+}
+
+   .gray-container {
+      background-color: #E7EEF4;
+      display: flex;
+      margin-left:60px; /*change*/
+      margin-right:60px;
+      height: 100%;
+      padding-bottom:80px;
+    }
+    
+    .part {
+      flex: 1;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    
+    .gray-container img {
+      height: 100px;
+      width: 100px;
+    }
+    
+    .part1,
+    .part2,
+    .part3 {
+      display: flex;
+      margin-top: 30px;
+    }
+    
+    
+    .part1 .text,
+    .part2 .text,
+    .part3 .text {
+      margin-left: 10px;
+    }
+    
+    
+    
+  
+    @media (max-width: 768px) {
+      .gray-container {
+        flex-direction: column; 
+      }
+    
+      .part1,
+      .part2,
+      .part3 {
+        flex-direction: column;
+        align-items: center; 
+      }
+    
+      .part1,
+      .part2,
+      .part3 img {
+        margin-left: 20px; 
+        margin-bottom: 10px; 
+      }
+    }
+    .icon {
+      padding-left: 25px;
+      background: url("https://fontawesome.com/icons/location-dot?f=classic&s=solid") no-repeat left;
+      background-size: 20px;
+    }
+
+
+
+/*footer*/
+.footerb{
+background-color: #4c4d4b;
+}
+.link_info{
+text-decoration:none;
+color:white;
+}
+.col a:hover {
+ color:#7895CB;
+ text-decoration:underline;
+ text-decoration-color: white;
+
+}
+.social {
+font-size: 30px;
+padding: 5px;
+justify-content: space-between;
+align-items: center;
+}
+.linkIcn {
+padding: 10px 30px;
+color: white;
+}
+.copyright{
+font-size: 10px;
+}
+.custom-bg-gray {
+background-color: #4c4d4b;
+/*margin-top: 30px;*/
+
+}
+.container-fluid{
+margin-top: 20px;
+}
+.row{
+margin-top: 30px; 
+} 
+.custom-border {
+border-bottom: 1px solid #ffffff; 
+} 

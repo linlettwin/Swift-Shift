@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/bc_logo.png" />
+  <title>Swift Shift</title>
+  <link rel="stylesheet" href="office.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <title>Your Page Title</title>
+  
+   <style>
+    .otherOffice{
+    margin-top:20px;
+    margin-bottom:30px;
+    padding:5px;
+    border-radius:5px;
+    background-color:#f18d65;
+    color:black;
+    border-color:#f18d65;
+    width:200px;
+    height:50px;
+    margin-left:20px;
+}
+   
+   </style>
+
+
+<body>
+
+  <div class="container">
+    <div class="blue-section">
+      <h4>Branch Offices</h4>
+      <div class="orange-underline"></div>
+    </div>
+
+    <div class="white-section">
+      <!--<div class="search-box">
+        <input type="text" class="search-input" placeholder="Search">
+        <div class="search-icon" ><i class="fa-solid fa-magnifying-glass"></i></div>
+      </div>-->
+    </div>
+    </div>
+
+      <div class="review">
+        <section class="testimonials">
+          <div class="container1">
+            <div class="testimonials-content">
+              <div class="swiper testimonials-slider js-testimonials-slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide testimonials-item">
+                    <div class="mandalay">
+                    <div class="info">
+                      <div class="text-box">
+                        <h3 class="name">Mandalay</h3>
+                      </div>
+                    </div>
+                    <div class="text">
+                        <h5>Address</h5>
+                        <p>121 Thazain Street, 21 Avenue, 
+                            Mandalay.</p>
+                        <h5>Call us</h5>
+                        <p>
+                            09-557849838<br>
+                            09-789998665
+                        </p>
+                        <h5>Opening Hours</h5>
+                        <p>Monday-Friday - 9am - 7pm<br>
+                            Saturday,Sunday - Closed</p>
+                    </div>
+                     </div>
+                    
+                  </div>
+    
+                  <div class="swiper-slide testimonials-item">
+                    <div class="Kalaw">
+                    <div class="info">
+                      <div class="text-box">
+                        <h3 class="name">Kalaw</h3>
+                      </div>
+                    </div>
+                    <div class="text">
+                        <h5>Address</h5>
+                        <p>97 PAdauk Street, Kalaw.</p>
+                        <h5>Call us</h5>
+                        <p>
+                            09-576787544<br>
+                            09-268541764
+                        </p>
+                        <h5>Opening Hours</h5>
+                        <p>Monday-Friday - 9am - 7pm<br>
+                            Saturday,Sunday - Closed</p>
+                    </div>
+                  </div>
+                    
+                    
+                  </div>
+    
+                  <div class="swiper-slide testimonials-item">
+                    <div class="NayPyidaw">
+                    <div class="info">
+                      <div class="text-box">
+                        <h3 class="name">NayPyidaw</h3>
+                      </div>
+                    </div>
+                    <div class="text">
+                        <h5>Address</h5>
+                        <p>12 street, no(4) Quarter, NayPyidaw.</p>
+                        <h5>Call us</h5>
+                        <p>
+                            09-784323456<br>
+                            09-654345667
+                        </p>
+                        <h5>Opening Hours</h5>
+                        <p>Monday-Friday - 9am - 7pm<br>
+                            Saturday,Sunday - Closed</p>
+                    </div>
+                  </div>
+                    
+                  </div>
+    
+                  <div class="swiper-slide testimonials-item">
+                    <div class="MyitKyinar">
+                    <div class="info">
+                      <div class="text-box">
+                        <h3 class="name">MyitKyinar</h3>
+                      </div>
+                    </div>
+                    <div class="text">
+                        <h5>Address</h5>
+                        <p>43 Lanmadaw street, MyitKyinar, 
+                            </p>
+                        <h5>Call us</h5>
+                        <p>
+                            09-557849838<br>
+                            09-789998665
+                        </p>
+                        <h5>Opening Hours</h5>
+                        <p>Monday-Friday - 9am - 7pm<br>
+                            Saturday,Sunday - Closed</p>
+                    </div>
+                  </div>
+                    
+                  </div>
+                  <div class="swiper-slide testimonials-item">
+                    <div class="Dawei">
+                    <div class="info">
+                      <div class="text-box">
+                        <h3 class="name">Dawei</h3>
+                      </div>
+                    </div>
+                    <div class="text">
+                        <h5>Address</h5>
+                        <p>17 Thiri street , Dawei.</p>
+                        <h5>Call us</h5>
+                        <p>
+                            09-766234567<br>
+                            09-269876543
+                        </p>
+                        <h5>Opening Hours</h5>
+                        <p>Monday-Friday - 9am - 7pm<br>
+                            Saturday,Sunday - Closed</p>
+                    </div>
+                  </div>
+                    
+                  </div>
+                  <div class="swiper-slide testimonials-item">
+                    <div class="Taunggyi"></div>
+                    <div class="info">
+                      <div class="text-box">
+                        <h3 class="name">Taunggyi</h3>
+                      </div>
+                    </div>
+                    <div class="text">
+                        <h5>Address</h5>
+                        <p>74 street, Ayechantar Quarter, Taunggyi</p>
+                        <h5>Call us</h5>
+                        <p>
+                            09-793456786<br>
+                            09-766987653
+                        </p>
+                        <h5>Opening Hours</h5>
+                        <p>Monday-Friday - 9am - 7pm<br>
+                            Saturday,Sunday - Closed</p>
+                    </div>
+                  </div>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination js-testimonials-pagination"></div>
+            </div>
+            <div class="office_bt">
+              <a href="home.php"><button class="otherOffice" formaction="home.php" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">Back to Home</button> </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script>
+        const swiper = new Swiper('.js-testimonials-slider', {
+          grabCursor:true,
+          spaceBetween:30,
+          pagination:{
+            el:  '.js-testimonials-pagination',
+            clickable:true
+          },
+          breakpoints:{
+            767:{
+              slidesPerView:2
+            }
+          }
+        });
+      </script>
+      </body>
+    
+</html>  
